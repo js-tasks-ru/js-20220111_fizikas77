@@ -7,7 +7,7 @@
 export const omit = (obj, ...fields) => {
   for(let arg of fields){
     if(obj.hasOwnProperty(arg)){
-      delete obj[arg];
+      obj[arg] = undefined;
     }
   }
   return obj;

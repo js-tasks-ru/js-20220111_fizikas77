@@ -5,9 +5,9 @@
  * @returns {object} - returns the new object
  */
 export const pick = (obj, ...fields) => {
-  for(let key in obj){
-    if(fields.indexOf(key) === -1){
-      delete obj[key];
+  for(const key in obj){
+    if(!fields.includes(key)){
+      obj[key] = undefined;
     }
   }
   return obj;
