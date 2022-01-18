@@ -5,5 +5,10 @@
  * @returns {object} - returns the new object
  */
 export const pick = (obj, ...fields) => {
-
+  for(const key in obj){
+    if(!fields.includes(key)){
+      obj[key] = undefined;
+    }
+  }
+  return obj;
 };
